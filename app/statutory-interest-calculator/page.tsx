@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 import { calculatorUrl } from "@/lib/site";
+import { seoPages } from "@/lib/seo-pages";
 
 const canonicalUrl = calculatorUrl;
 
@@ -188,6 +189,37 @@ export default function StatutoryInterestCalculatorPage() {
               page. Contract terms, disputes, part-payments, court procedure,
               and debt-specific facts can change what you should claim.
             </p>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
+          <div className="border-y border-slate-200 py-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+              Late payment resources
+            </p>
+            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950">
+              Learn how UK statutory interest, compensation, and commercial debt
+              claims work.
+            </h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {seoPages.map((page) => (
+                <Link
+                  key={page.slug}
+                  href={`/${page.slug}`}
+                  className="group rounded-[1.5rem] border border-slate-200 bg-white/85 p-5 transition hover:border-slate-950 hover:shadow-[0_18px_50px_rgba(20,33,61,0.08)]"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-800">
+                    {page.eyebrow}
+                  </p>
+                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-slate-950 group-hover:underline">
+                    {page.h1}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-700">
+                    {page.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
