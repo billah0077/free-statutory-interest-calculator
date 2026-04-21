@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vitest:*)",
+      "Bash(npx next:*)",
+      "Bash(curl -s http://localhost:3001/statutory-interest-calculator)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/_next/static/chunks/0dgq26a5_oy.a.js)",
+      "Bash(curl -s http://localhost:3001/_next/static/chunks/0_3u3-3g9auc..js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/statutory-interest-calculator)"
+    ]
+  }
+}
