@@ -7,7 +7,7 @@ import { Header } from "@/components/layout/Header";
 import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 const canonicalUrl =
-  "https://payforce.co.uk/statutory-interest-calculator";
+  "https://free-statutory-interest-calculator.vercel.app/statutory-interest-calculator";
 
 const faqItems = [
   {
