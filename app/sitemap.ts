@@ -1,17 +1,24 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://free-statutory-interest-calculator.vercel.app";
+import { calculatorUrl, siteUrl } from "@/lib/site";
+import { seoPages } from "@/lib/seo-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   return [
     {
-      url: `${siteUrl}/statutory-interest-calculator`,
+      url: calculatorUrl,
       lastModified,
       changeFrequency: "monthly",
       priority: 1,
     },
+    ...seoPages.map((page) => ({
+      url: `${siteUrl}/${page.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${siteUrl}/signup`,
       lastModified,

@@ -5,9 +5,9 @@ import { CalculatorCard } from "@/components/calculator/CalculatorCard";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
+import { calculatorUrl } from "@/lib/site";
 
-const canonicalUrl =
-  "https://free-statutory-interest-calculator.vercel.app/statutory-interest-calculator";
+const canonicalUrl = calculatorUrl;
 
 const faqItems = [
   {
@@ -35,19 +35,39 @@ const faqItems = [
     answer:
       "Not always. Many businesses first calculate the claim themselves and send a professional payment demand. Complex disputes or court action may still justify legal advice.",
   },
+  {
+    question: "How many days overdue before statutory interest applies?",
+    answer:
+      "Statutory interest is calculated from the point an invoice becomes overdue. The exact overdue date depends on the agreed payment terms, the invoice due date, and the commercial context.",
+  },
+  {
+    question: "What compensation can I claim for late payment?",
+    answer:
+      "For qualifying commercial debts, fixed compensation may be 40 GBP, 70 GBP, or 100 GBP depending on the invoice value. This calculator applies those tiers alongside accrued interest.",
+  },
+  {
+    question: "Does this calculator apply to consumers?",
+    answer:
+      "No. This calculator is designed for UK business-to-business commercial invoices, not consumer debts or personal lending.",
+  },
+  {
+    question: "Can I claim debt recovery costs?",
+    answer:
+      "The Late Payment framework includes fixed compensation tiers. Additional recovery costs can be fact-specific, so treat this calculator as a starting point and seek professional advice where needed.",
+  },
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Free UK Statutory Interest Calculator | PayForce",
+  title: "UK Statutory Interest Calculator for Late Commercial Payments",
   description:
-    "Calculate statutory interest on overdue commercial invoices in the UK under the Late Payment of Commercial Debts (Interest) Act 1998.",
+    "Free UK statutory interest calculator for overdue commercial invoices. Estimate late payment interest, fixed compensation, and total commercial debt claim.",
   alternates: {
     canonical: canonicalUrl,
   },
   openGraph: {
-    title: "Free UK Statutory Interest Calculator | PayForce",
+    title: "UK Statutory Interest Calculator for Late Commercial Payments",
     description:
-      "Calculate statutory interest on overdue commercial invoices in the UK under the Late Payment of Commercial Debts (Interest) Act 1998.",
+      "Free UK statutory interest calculator for overdue commercial invoices. Estimate late payment interest, fixed compensation, and total commercial debt claim.",
     url: canonicalUrl,
     type: "website",
   },
@@ -67,12 +87,12 @@ export default function StatutoryInterestCalculatorPage() {
                 Free calculator
               </p>
               <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
-                UK late payment interest calculator for commercial invoices.
+                UK statutory interest calculator for overdue commercial invoices.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-                Calculate statutory interest, fixed compensation, and the full
-                legal claim under the Late Payment of Commercial Debts
-                (Interest) Act 1998 in one place.
+                Calculate late payment interest, fixed compensation, and the
+                total commercial debt claim under the Late Payment of Commercial
+                Debts (Interest) Act 1998.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <span className="rounded-full border border-slate-900/10 bg-white/70 px-4 py-2 text-sm font-medium text-slate-800">
@@ -154,6 +174,21 @@ export default function StatutoryInterestCalculatorPage() {
               </Link>
             </div>
           </aside>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6">
+          <div className="rounded-[2rem] border border-amber-300/70 bg-amber-50 p-6">
+            <p className="text-sm font-semibold text-amber-950">
+              Important legal disclaimer
+            </p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-800">
+              This calculator is for general information only and is not legal
+              advice. It estimates statutory interest and fixed compensation for
+              UK commercial invoice debts using the assumptions stated on this
+              page. Contract terms, disputes, part-payments, court procedure,
+              and debt-specific facts can change what you should claim.
+            </p>
+          </div>
         </section>
 
         <section className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:py-10">
